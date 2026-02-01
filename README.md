@@ -1,24 +1,25 @@
 # Hi Presence
 ### A House of Ariaka Project
 
-**Hi Presence** is a co-presence environment where interaction is a live state, not a stored object. 
+Hi Presence is an environment for **Co-presence**, where interaction is a live state rather than a stored object.
 
-## 📱 Current Deployment Status
-- [x] **Android:** Live and Deployed.
-- [ ] **iOS:** In Development (Finalizing E2EE Handshake). **Status: Coming Soon.**
-- [ ] **Windows:** Phase 2 (In Review).
-- [x] **Web Bridge:** Live (Seamless join for non-app users; 3-Moment limit).
+## 📱 Status & Availability
+- **Android:** [Live] Full Native E2EE.
+- **Web Bridge:** [Live] Seamless join via Presence Address (3-Moment limit).
+- **iOS:** [Waiting List] Finalizing hardware-level E2EE handshakes.
+- **Windows:** [Phase 2] Internal Review.
 
-## 📁 Feature Spotlight: The "Reveal" System (Upcoming)
-Hi Presence is moving toward a **No-Transfer** media philosophy.
-* **Projection, Not Transmission:** Files are never "sent." Instead, the host "Reveals" the file.
-* **Live Rendering:** The originator renders the media locally and streams the representation to the participant. 
-* **Zero Asset Exposure:** The raw file never leaves the source device, ensuring absolute document security.
+## 🛠 Active Engineering (Blueprint Phases)
+The following features are currently under development and not yet available in the production build:
 
-## 🔐 Security Framework
-* **Character-Level E2EE:** Live Text is projected key-by-key with ephemeral RSA/AES encryption.
-* **Warm Voice Pipeline:** Secure P2P audio is available for instant escalation.
-* **Collapse Engine:** Total memory wipe and session teardown the moment focus is lost.
+* **The "Reveal" System:** A file-less media interaction protocol. Content is rendered locally and "projected" to participants via E2EE stream. The raw file never leaves the originator's device.
+* **Drift Windows:** A coordination layer that allows for fluid, non-obligatory availability spans.
+
+## 🔐 Privacy & Security
+Privacy is a constraint, not a policy.
+* **Character-Level E2EE:** Live text is projected key-by-key.
+* **Warm Audio:** Secure P2P voice escalation.
+* **Collapse Engine:** Automatic memory wipe and session teardown on focus loss.
 
 ---
 © 2026 House of Ariaka.
