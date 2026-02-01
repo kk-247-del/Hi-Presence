@@ -42,15 +42,17 @@
             border-radius: 20px;
             box-shadow: 6px 6px 12px #bec8d4, -6px -6px 12px #ffffff;
             font-weight: 700;
+            font-size: 0.85rem;
         }
 
-        .active { color: #00b894; } /* Green for deployed */
-        .upcoming { color: #0984e3; } /* Blue for upcoming */
+        .active { color: #00b894; border: 1px solid #00b894; } /* Live */
+        .wait { color: #d63031; border: 1px solid #d63031; } /* iOS Wait */
+        .upcoming { color: #0984e3; border: 1px solid #0984e3; } /* Windows */
 
         .feature-detail {
             border-left: 4px solid var(--text-main);
             padding-left: 25px;
-            margin: 30px 0;
+            margin: 35px 0;
         }
 
         .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
@@ -65,7 +67,8 @@
             transition: 0.2s;
             font-family: 'Space Mono', monospace;
         }
-        .btn:hover { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
+        .btn.disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; background: #eee; }
+        .btn:not(.disabled):hover { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
 
         #privacy { 
             background: rgba(255,255,255,0.2); 
@@ -84,49 +87,49 @@
     <span class="mono">House of Ariaka</span>
     <h1>Hi Presence</h1>
     <div class="status-grid container">
-        <div class="status-tag active">Android Deployed</div>
-        <div class="status-tag active">iOS Deployed</div>
-        <div class="status-tag upcoming">Windows Phase 2</div>
+        <div class="status-tag active">Android: Live</div>
+        <div class="status-tag wait">iOS: Coming Soon</div>
+        <div class="status-tag upcoming">Windows: Phase 2</div>
     </div>
 </header>
 
 <div class="container">
     <div class="card">
-        <h2>Communication Without Archiving</h2>
-        <p>Hi Presence is an environment for <strong>Co-presence</strong>, rejecting the traditional messaging metaphor of data exchange. We provide the tools for immediate, high-fidelity interaction across platforms without ever creating a message object.</p>
+        <h2>Presence is Cross-Platform.</h2>
+        <p>Hi Presence is currently live for <strong>Android</strong> users. Our iOS community will have to wait just a bit longer as we finalize the native E2EE handshake for Apple hardware. In the meantime, the <strong>Web Bridge</strong> is open for all.</p>
         
         <div class="feature-detail">
-            <span class="mono">The Web Bridge</span>
-            <h3>No-Install Seamless Access</h3>
-            <p>Collaborate with anyone instantly. Generate a one-time <strong>Presence Address</strong> and share the link. Your colleagues can join the Moment through a browser without installing the app. <em>Note: Web access is limited to 3 sessions per user to maintain architectural integrity.</em></p>
+            <span class="mono">Instant Collaboration</span>
+            <h3>The Presence Address</h3>
+            <p>Generate a one-time link in your app and share it. Colleagues can join your Moment via a web browser—no install needed. <strong>Note:</strong> Web access is limited to 3 sessions per user.</p>
         </div>
 
-        <div class="feature-detail">
-            <span class="mono">Upcoming Feature</span>
-            <h3>Media Reveal: Sharing Without Sending</h3>
-            <p>We are breaking the file-sharing assumption. Documents, photos, and videos are never transmitted or shared as files. Instead, they are <strong>Revealed</strong>. The originator renders the media locally and streams only the representation to the participant. [cite_start]The asset never leaves your device, and no copy is ever created[cite: 30, 121, 122].</p>
+        <div class="feature-detail" style="background: rgba(0,210,255,0.05); padding: 20px; border-radius: 0 20px 20px 0;">
+            <span class="mono">Upcoming</span>
+            <h3>Media Reveal (No-Transfer Sharing)</h3>
+            <p>Soon, you will share files without sending them. "Reveal" allows you to project documents and media to others via an encrypted stream. The file stays on your device; they only see the live render. No copy is ever created.</p>
         </div>
 
         <div class="btn-group">
-            <a href="#" class="btn">Get for Android</a>
-            <a href="#" class="btn">Get for iOS</a>
-            <a href="#" class="btn">Join via Web</a>
+            <a href="#" class="btn">Download Android</a>
+            <a href="#" class="btn disabled">iOS (Waiting List)</a>
+            <a href="#" class="btn">Open Web Bridge</a>
         </div>
     </div>
 
     <div id="privacy">
-        <span class="mono">House of Ariaka Security</span>
-        <h2>End-to-End Encryption (E2EE)</h2>
+        <span class="mono">Security Architecture</span>
+        <h2>End-to-End Encryption</h2>
         <ul>
-            [cite_start]<li><strong>Key-by-Key E2EE:</strong> Live Text is encrypted and streamed at the character level—interaction is the event, not a precursor[cite: 13, 14].</li>
-            [cite_start]<li><strong>Warm Audio:</strong> Voice escalation uses a secure, always-ready P2P pipeline[cite: 19, 20].</li>
-            [cite_start]<li><strong>Zero Knowledge:</strong> Our servers never see your text, voice, media, or encryption keys[cite: 82].</li>
+            <li><strong>Key-by-Key:</strong> Live Text is encrypted character-by-character.</li>
+            <li><strong>Warm Voice:</strong> P2P audio streaming is active and secure.</li>
+            <li><strong>Zero Knowledge:</strong> House of Ariaka never sees your data or your keys.</li>
         </ul>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 House of Ariaka | Presence Engine v1.5
+    &copy; 2026 House of Ariaka | Presence Engine v1.6
 </footer>
 
 </body>
