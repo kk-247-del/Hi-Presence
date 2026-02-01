@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Presence | House of Ariaka</title>
+    <title>Hi Presence | House of Ariaka Architectural Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --surface: #e0e5ec;
@@ -13,123 +12,134 @@
             --text-muted: #636e72;
             --shadow-dark: rgba(163, 177, 198, 0.6);
             --shadow-light: rgba(255, 255, 255, 0.8);
+            --accent: #0984e3;
+            --dev: #6c5ce7;
         }
 
         body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--surface); color: var(--text-main); line-height: 1.6; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        header { padding: 60px 0; text-align: center; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        header { padding: 100px 0 60px; text-align: center; }
         .mono { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); }
-        h1 { font-size: 4rem; margin: 10px 0; font-weight: 800; letter-spacing: -3px; }
-
-        .card {
+        h1 { font-size: 4.5rem; margin: 10px 0; font-weight: 800; letter-spacing: -4px; line-height: 1; }
+        h2 { font-size: 2.2rem; margin-top: 50px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
+        
+        .blueprint-card {
             background: var(--surface);
-            padding: 45px;
-            border-radius: 40px;
-            box-shadow: 20px 20px 60px #bec8d4, -20px -20px 60px #ffffff;
-            margin-bottom: 40px;
-        }
-
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .status-tag {
-            padding: 15px;
-            border-radius: 20px;
-            box-shadow: 6px 6px 12px #bec8d4, -6px -6px 12px #ffffff;
-            font-weight: 700;
-            font-size: 0.85rem;
-        }
-
-        .active { color: #00b894; border: 1px solid #00b894; } /* Live */
-        .wait { color: #d63031; border: 1px solid #d63031; } /* iOS Wait */
-        .upcoming { color: #0984e3; border: 1px solid #0984e3; } /* Windows */
-
-        .feature-detail {
-            border-left: 4px solid var(--text-main);
-            padding-left: 25px;
-            margin: 35px 0;
-        }
-
-        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
-        .btn {
-            padding: 18px 35px;
-            background: var(--surface);
+            padding: 60px;
             border-radius: 50px;
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 700;
-            box-shadow: 8px 8px 16px #bec8d4, -8px -8px 16px #ffffff;
-            transition: 0.2s;
+            box-shadow: 25px 25px 70px #bec8d4, -25px -25px 70px #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .dev-badge {
+            display: inline-block;
+            background: var(--dev);
+            color: white;
             font-family: 'Space Mono', monospace;
-        }
-        .btn.disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; background: #eee; }
-        .btn:not(.disabled):hover { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
-
-        #privacy { 
-            background: rgba(255,255,255,0.2); 
-            backdrop-filter: blur(12px); 
-            border-radius: 40px; 
-            padding: 45px; 
-            border: 1px solid rgba(255,255,255,0.3);
+            font-size: 0.65rem;
+            padding: 4px 12px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        footer { text-align: center; padding: 60px; font-family: 'Space Mono', monospace; opacity: 0.5; font-size: 0.7rem; }
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .law-item {
+            padding: 40px;
+            border-radius: 35px;
+            background: var(--surface);
+            box-shadow: 12px 12px 24px #bec8d4, -12px -12px 24px #ffffff;
+        }
+
+        .status-tag { font-family: 'Space Mono', monospace; font-weight: 700; padding: 5px 15px; border-radius: 10px; font-size: 0.75rem; background: #dfe6e9; }
+        .live { background: #55efc4; color: #00b894; }
+        .wait { background: #ff7675; color: white; }
+
+        #privacy-policy {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(15px);
+            padding: 60px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.4);
+            margin-top: 80px;
+        }
+
+        footer { text-align: center; padding: 100px 20px; opacity: 0.4; font-size: 0.8rem; font-family: 'Space Mono', monospace; }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="mono">House of Ariaka</span>
+    <span class="mono">House of Ariaka Architectural Manifest</span>
     <h1>Hi Presence</h1>
-    <div class="status-grid container">
-        <div class="status-tag active">Android: Live</div>
-        <div class="status-tag wait">iOS: Coming Soon</div>
-        <div class="status-tag upcoming">Windows: Phase 2</div>
+    <div style="margin-top: 30px;">
+        <span class="status-tag live">Android Deployed</span>
+        <span class="status-tag wait">iOS: Waiting List</span>
+        <span class="status-tag">Windows: Phase 2</span>
     </div>
 </header>
 
 <div class="container">
-    <div class="card">
-        <h2>Presence is Cross-Platform.</h2>
-        <p>Hi Presence is currently live for <strong>Android</strong> users. Our iOS community will have to wait just a bit longer as we finalize the native E2EE handshake for Apple hardware. In the meantime, the <strong>Web Bridge</strong> is open for all.</p>
+    <section class="blueprint-card">
+        <h2>I. Core Architecture (Live)</h2>
+        <div class="law-grid">
+            <div class="law-item">
+                <span class="mono">Engine</span>
+                <h3>Moment Persistence</h3>
+                <p>Hi Presence creates ephemeral environments that dissolve the instant focus is lost. No message objects are ever created; interaction is a live, shared state.</p>
+            </div>
+            <div class="law-item">
+                <span class="mono">Protocol</span>
+                <h3>E2EE Live Text</h3>
+                <p>Characters are encrypted and streamed in real-time. Typing is the act of communication. There is no "Send" primitive.</p>
+            </div>
+            <div class="law-item">
+                <span class="mono">Web Bridge</span>
+                <h3>One-Time Address</h3>
+                <p>Generate a Presence Address to invite colleagues via the web. Frictionless join with a 3-Moment structural limit.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="blueprint-card" style="border: 2px dashed var(--dev);">
+        <div class="dev-badge">LABS: UNDER DEVELOPMENT</div>
+        <h2>II. Upcoming Blueprint Phases</h2>
         
-        <div class="feature-detail">
-            <span class="mono">Instant Collaboration</span>
-            <h3>The Presence Address</h3>
-            <p>Generate a one-time link in your app and share it. Colleagues can join your Moment via a web browser—no install needed. <strong>Note:</strong> Web access is limited to 3 sessions per user.</p>
+        <div class="law-grid">
+            <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
+                <span class="mono">Status: Engineering</span>
+                <h3>The Reveal System</h3>
+                <p>Reimagining media as <strong>co-presence without transfer</strong>. Photos and documents will be "Revealed"—rendered locally and streamed as a representation. The raw file never leaves the source device.</p>
+            </div>
+            <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
+                <span class="mono">Status: Prototype</span>
+                <h3>Drift Windows</h3>
+                <p>A non-obligatory coordination system for availability. Drift windows allow for potential co-presence without the rigidity of scheduling, expiring silently if not met.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="feature-detail" style="background: rgba(0,210,255,0.05); padding: 20px; border-radius: 0 20px 20px 0;">
-            <span class="mono">Upcoming</span>
-            <h3>Media Reveal (No-Transfer Sharing)</h3>
-            <p>Soon, you will share files without sending them. "Reveal" allows you to project documents and media to others via an encrypted stream. The file stays on your device; they only see the live render. No copy is ever created.</p>
-        </div>
-
-        <div class="btn-group">
-            <a href="#" class="btn">Download Android</a>
-            <a href="#" class="btn disabled">iOS (Waiting List)</a>
-            <a href="#" class="btn">Open Web Bridge</a>
-        </div>
-    </div>
-
-    <div id="privacy">
-        <span class="mono">Security Architecture</span>
-        <h2>End-to-End Encryption</h2>
+    <section id="privacy-policy">
+        <span class="mono">Compliance</span>
+        <h2>Privacy by Constraint</h2>
+        <p>Our Privacy Policy is simple: We do not store what we cannot see. Since Hi Presence rejects the "Message Object," there is no archive to breach.</p>
         <ul>
-            <li><strong>Key-by-Key:</strong> Live Text is encrypted character-by-character.</li>
-            <li><strong>Warm Voice:</strong> P2P audio streaming is active and secure.</li>
-            <li><strong>Zero Knowledge:</strong> House of Ariaka never sees your data or your keys.</li>
+            <li><strong>Zero Knowledge:</strong> All text and voice are E2EE. Our backend acts as a blind switchboard.</li>
+            <li><strong>Memory Only:</strong> Data exists only in volatile RAM and is wiped upon Moment collapse.</li>
+            <li><strong>No Tracking:</strong> We do not collect metadata or interaction history.</li>
         </ul>
-    </div>
+    </section>
 </div>
 
 <footer>
-    &copy; 2026 House of Ariaka | Presence Engine v1.6
+    &copy; 2026 House of Ariaka | Presence Engine v1.9<br>
+    "Privacy is a structural impossibility of data persistence."
 </footer>
 
 </body>
