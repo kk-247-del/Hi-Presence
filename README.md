@@ -1,63 +1,29 @@
-Hi Presence
-A House of Ariaka Project | Co-Presence via E2EE Moment Engineering
-Hi Presence is not a messenger, a calling app, or a media-sharing platform. It is a fundamentally different class of real-time communication system that rejects the dominant metaphor of "messaging as exchange" and instead treats interaction as co-presence.
+# Hi Presence
+### A House of Ariaka Project
 
-In this environment, Moments occur only when the conditions for shared focus are satisfied and dissolve the instant those conditions fail. Nothing is sent, nothing is received, and nothing is stored.
+**Hi Presence** is a real-time co-presence environment that rejects the metaphor of "messaging as exchange." [cite_start]It is not a messenger; it is a state of shared presence where nothing is sent, received, or stored[cite: 91, 94].
 
-🔐 The Security Manifesto: Absolute Privacy
-In Hi Presence, privacy is not a policy; it is a structural constraint of the architecture.
+## 🔐 The Security Manifesto
+* [cite_start]**Character-Level E2EE:** Live Text is encrypted and projected key-by-key[cite: 13]. [cite_start]There is no "send" button because there is no "message object"[cite: 140].
+* [cite_start]**Always-Warm Voice:** A secure, end-to-end encrypted audio pipeline is maintained within every Moment for seamless escalation[cite: 106, 109].
+* [cite_start]**Zero Knowledge:** House of Ariaka servers act only as a signaling layer and never see text, voice, or keys[cite: 82].
 
-Key-by-Key E2EE: Live Text is encrypted and streamed at the character level. As you type, the character is encrypted and projected to the other participant. There is no "send" button because there is no "message object."
+## 🚀 Deployment & Accessibility
+Hi Presence is a cross-platform environment designed to eliminate onboarding friction.
+* **Android & iOS:** Fully deployed and active.
+* **Windows:** Phase 2 implementation in progress.
+* **Presence Address (Web Bridge):** Invite colleagues via a one-time link. They join seamlessly through the web app without an installation. Web sessions are limited to **3 Moments** per user to encourage native app adoption and ensure structural integrity.
 
-Always-Warm Voice: A secure, end-to-end encrypted audio pipeline is maintained within every Moment, allowing for seamless voice escalation without re-establishing a session.
+## 📁 Upcoming: The "Reveal" System
+[cite_start]We are reframing media interaction as **Co-presence Without Transfer**[cite: 29].
+* **Media Projection:** Photos, videos, and documents are never "sent" as files. [cite_start]Instead, they are **Revealed**[cite: 30, 121].
+* [cite_start]**Rendered Representations:** The host renders the media locally and streams only the frames or pages to the viewer[cite: 122, 123].
+* [cite_start]**No Assets Shared:** The raw file never leaves the originator's device, and all buffers are destroyed upon Moment collapse[cite: 124, 129].
 
-Zero Persistence: No data is ever written to a local disk or a remote database. All encryption keys (AES-256 / RSA) are ephemeral and exist only in volatile memory (RAM).
+## 🛠 Engineering Laws
+1. [cite_start]**No Presence, No State:** Interaction exists only when participants are foregrounded[cite: 147].
+2. [cite_start]**Immediate Collapse:** Any violation of focus (screen lock/backgrounding) triggers an irreversible teardown of keys and data[cite: 152, 306].
+3. [cite_start]**No Send Primitive:** Communication is expressed and revealed, never delivered[cite: 148].
 
-Zero Knowledge: House of Ariaka servers act only as a signaling layer. We never see text, voice, media, or encryption keys.
-
-🚀 The Web Bridge & Seamless Onboarding
-To eliminate the friction of traditional app adoption, Hi Presence introduces the Presence Address system.
-
-Generate & Share: A native app user (Android/iOS) can generate a one-time Presence Address.
-
-No-Install Join: The recipient can join the Moment immediately via any modern web browser. No accounts or downloads required.
-
-Web Limitations: To maintain the high-fidelity and security standards of the House of Ariaka, Web-based sessions are limited to 3 Moments. To unlock unlimited, persistent co-presence, users must transition to the native applications.
-
-🛠 Engineering Laws (The Locus Class Blueprint)
-Hi Presence is governed by five non-negotiable architectural constraints:
-
-No Presence, No State: No surface or stream exists unless all required participants are foregrounded and active.
-
-Key-by-Key Expression: Communication is a live event. We reject the "packaging" of thoughts into sent messages.
-
-Immediate Collapse: If presence is broken (screen lock, app backgrounding, or focus loss), the MomentEngine™ triggers an irreversible teardown.
-
-Hardware-Level Privacy: Panic-wipe gestures and background-detection ensure that no ghost of an interaction remains on the device.
-
-P2P Escalation: Media is handled via Peer-to-Peer (WebRTC) protocols, ensuring the fastest possible throughput with the lowest possible exposure.
-
-📱 Platform Status
-Android: [Deployed/Live] - Full Native Experience.
-
-iOS: [Deployed/Live] - Full Native Experience.
-
-Web: [Live] - Seamless Join (3-Moment Limit).
-
-Windows: [Phase 2 - In Review] - Native Desktop Integration.
-
-⚙️ Technical Stack
-Language: Dart / Flutter
-
-Real-time Protocol: WebRTC (Secure P2P)
-
-Security: AES-256-GCM / RSA-4096
-
-State Architecture: MomentEngine™ (Custom Singleton)
-
-Signaling: Lightweight E2EE Metadata Exchange
-
-⚖️ License & Attribution
-Hi Presence is a proprietary architectural implementation by House of Ariaka. The code in this repository is licensed under the MIT License.
-
-Copyright © 2026 House of Ariaka. All rights reserved.
+---
+© 2026 House of Ariaka. Built for Privacy.
