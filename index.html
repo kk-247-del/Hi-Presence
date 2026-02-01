@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Presence | House of Ariaka Architectural Overview</title>
+    <title>Presence | Locus Class Alpha</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --surface: #e0e5ec;
@@ -12,152 +13,142 @@
             --text-muted: #636e72;
             --shadow-dark: rgba(163, 177, 198, 0.6);
             --shadow-light: rgba(255, 255, 255, 0.8);
-            --accent: #0984e3;
-            --dev: #6c5ce7;
-            --live-green: #00b894;
         }
 
-        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--surface); color: var(--text-main); line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        header { padding: 100px 0 60px; text-align: center; }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--surface);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { padding: 80px 0; text-align: center; }
         .mono { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); }
-        h1 { font-size: 4.5rem; margin: 10px 0; font-weight: 800; letter-spacing: -4px; line-height: 1; }
-        h2 { font-size: 2.2rem; margin-top: 50px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
-        h3 { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--text-main); margin-top: 30px; }
+        
+        h1 { font-size: 4.5rem; margin: 10px 0; font-weight: 800; letter-spacing: -3px; }
+        h2 { font-size: 1.8rem; font-weight: 700; margin-top: 40px; }
 
-        .blueprint-card {
+        /* Neomorphic Card UI */
+        .card {
             background: var(--surface);
-            padding: 60px;
-            border-radius: 50px;
-            box-shadow: 25px 25px 70px #bec8d4, -25px -25px 70px #ffffff;
-            margin-bottom: 60px;
+            padding: 45px;
+            border-radius: 40px;
+            box-shadow: 20px 20px 60px #bec8d4, -20px -20px 60px #ffffff;
+            margin-bottom: 40px;
         }
 
-        .dev-badge {
-            display: inline-block;
-            background: var(--dev);
-            color: white;
-            font-family: 'Space Mono', monospace;
-            font-size: 0.65rem;
-            padding: 4px 12px;
-            border-radius: 50px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+        /* Neomorphic Grid Items */
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
         }
 
-        .status-grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
-        .status-tag { font-family: 'Space Mono', monospace; font-weight: 700; padding: 8px 20px; border-radius: 12px; font-size: 0.75rem; background: var(--surface); box-shadow: 4px 4px 10px #bec8d4, -4px -4px 10px #ffffff; }
-        .live { color: var(--live-green); border: 1px solid var(--live-green); }
-        .wait { color: #d63031; border: 1px solid #d63031; }
+        .law-item {
+            padding: 30px;
+            border-radius: 30px;
+            background: var(--surface);
+            box-shadow: 10px 10px 20px #bec8d4, -10px -10px 20px #ffffff;
+            border-top: 1px solid rgba(255,255,255,0.5);
+        }
 
-        .law-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-        .law-item { padding: 40px; border-radius: 35px; background: var(--surface); box-shadow: 12px 12px 24px #bec8d4, -12px -12px 24px #ffffff; }
-
-        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+        /* Neomorphic Action Button */
         .btn {
-            padding: 18px 35px;
+            display: inline-block;
+            padding: 22px 48px;
             background: var(--surface);
             border-radius: 50px;
             text-decoration: none;
             color: var(--text-main);
             font-weight: 700;
-            box-shadow: 8px 8px 16px #bec8d4, -8px -8px 16px #ffffff;
-            transition: 0.2s;
+            box-shadow: 9px 9px 18px #bec8d4, -9px -9px 18px #ffffff;
+            transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-family: 'Space Mono', monospace;
-        }
-        .btn:hover:not(.disabled) { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
-        .disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
-
-        #privacy-policy {
-            background: rgba(255,255,255,0.3);
-            backdrop-filter: blur(15px);
-            padding: 60px;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.4);
-            margin-top: 80px;
+            margin-top: 20px;
         }
 
-        footer { text-align: center; padding: 100px 20px; opacity: 0.4; font-size: 0.8rem; font-family: 'Space Mono', monospace; }
+        .btn:hover { 
+            box-shadow: inset 5px 5px 10px #bec8d4, inset -5px -5px 10px #ffffff;
+            transform: scale(0.98);
+        }
+
+        /* Privacy Policy Section for Microsoft Partner Compliance */
+        #privacy { 
+            background: rgba(255,255,255,0.2); 
+            backdrop-filter: blur(12px); 
+            border-radius: 40px; 
+            padding: 45px; 
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-top: 60px;
+        }
+
+        footer { text-align: center; padding: 80px 20px; font-family: 'Space Mono', monospace; opacity: 0.5; font-size: 0.7rem; }
+        
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 15px; position: relative; padding-left: 20px; font-size: 0.95rem; }
+        li::before { content: "•"; position: absolute; left: 0; color: var(--text-muted); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .card { padding: 30px; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="mono">The House of Ariaka Structural Manifest</span>
-    <h1>Hi Presence</h1>
-    <div class="status-grid container">
-        <div class="status-tag live">Android: Live</div>
-        <div class="status-tag live">Web Bridge: Live</div>
-        <div class="status-tag wait">iOS: In Dev</div>
-        <div class="status-tag">Windows: Phase 2</div>
-    </div>
+    <span class="mono">Cariselle Technologies</span>
+    <h1>Presence</h1>
+    <p class="mono">Locus Class | Moment-Based Engineering</p>
 </header>
 
 <div class="container">
-    <section class="blueprint-card">
-        <h2>I. Architecture & Presence (Live)</h2>
-        <p>Hi Presence is an environment for <strong>Co-presence</strong>. It rejects the messaging metaphor of exchange and instead treats interaction as a shared state. Nothing is sent, nothing is received, and nothing is stored.</p>
-        
-        <div class="law-grid">
-            <div class="law-item">
-                <span class="mono">Core Protocol</span>
-                <h3>Key-by-Key E2EE</h3>
-                <p>Live Text is encrypted and streamed at the character level. Typing <em>is</em> the interaction. No message objects are created.</p>
-            </div>
-            <div class="law-item">
-                <span class="mono">Voice Logic</span>
-                <h3>Always-Warm Audio</h3>
-                <p>Voice escalation utilizes a secure, always-ready P2P pipeline. No "calling" rituals—just seamless presence widening.</p>
-            </div>
-            <div class="law-item">
-                <span class="mono">Web Bridge</span>
-                <h3>Presence Address</h3>
-                <p>Invite anyone instantly. Colleagues join via browser with no install required. Web sessions are limited to 3 Moments per user.</p>
-            </div>
-        </div>
+    <div class="card">
+        <h2>Reject the Archive.</h2>
+        <p>Presence is a fundamentally different class of communication. It rejects the metaphor of messaging as exchange and instead treats interaction as <strong>co-presence</strong>. It is an environment where moments occur only during shared focus and dissolve the instant conditions fail. No storage. No history. Only the now.</p>
+        <a href="#store" class="btn">Windows Store Listing</a>
+    </div>
 
-        <div class="btn-group">
-            <a href="#" class="btn">Download Android</a>
-            <a href="#" class="btn disabled">iOS Waiting List</a>
-            <a href="#" class="btn">Open Web App</a>
+    <div class="law-grid">
+        <div class="law-item">
+            <span class="mono">Active Law 01</span>
+            <h3>Presence Detection</h3>
+            <p>The system continuously evaluates foreground activity and device state. If presence becomes ambiguous, the connection ceases.</p>
         </div>
-    </section>
-
-    <section class="blueprint-card" style="border: 2px dashed var(--dev);">
-        <div class="dev-badge">LABS: ACTIVE DEVELOPMENT</div>
-        <h2>II. Upcoming Blueprint Phases</h2>
-        
-        <div class="law-grid">
-            <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
-                <span class="mono">Status: Engineering</span>
-                <h3>The Reveal System</h3>
-                <p>Sharing without sending. Media is rendered locally and "projected" to participants via E2EE stream. The raw file never leaves the source device.</p>
-            </div>
-            <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
-                <span class="mono">Status: Prototyping</span>
-                <h3>Drift Windows</h3>
-                <p>A non-obligatory coordination system for availability. Drift windows allow for potential co-presence without the rigidity of scheduling.</p>
-            </div>
+        <div class="law-item">
+            <span class="mono">Active Law 02</span>
+            <h3>Live Text Streaming</h3>
+            <p>Characters are streamed in real-time as they are formed. Interaction is a live event, not a package delivered after the fact.</p>
         </div>
-    </section>
+        <div class="law-item">
+            <span class="mono">Active Law 03</span>
+            <h3>Moment Collapse</h3>
+            <p>Our <strong>MomentEngine™</strong> enforces a total teardown if focus is lost. There is no pause, no recovery, and no resumption.</p>
+        </div>
+    </div>
 
-    <section id="privacy-policy">
-        <span class="mono">Security & Compliance</span>
+    <div id="privacy">
+        <span class="mono">Architecture & Compliance</span>
         <h2>Privacy by Constraint</h2>
-        <p>At House of Ariaka, privacy is not a feature; it is the structural ground of our system. <strong>Privacy is a structural impossibility of data persistence.</strong></p>
-        
+        <p>In the Locus Class, privacy is not a setting; it is a structural impossibility of data persistence.</p>
         <ul>
-            <li><strong>Zero Knowledge:</strong> All content is End-to-End Encrypted (AES-256). House of Ariaka servers never see your data.</li>
-            <li><strong>Volatile Memory:</strong> Interaction data exists only in RAM and is purged instantly upon Moment collapse.</li>
-            <li><strong>The Law of Collapse:</strong> Any violation of focus (screen lock/backgrounding) destroys the session and the ephemeral keys.</li>
-            <li><strong>Hardware Integrity:</strong> Microphone and Camera are only accessible during active, foregrounded Moments.</li>
+            <li><strong>Zero Local Disk Writes:</strong> Interaction data lives only in volatile memory (RAM) and is purged instantly upon moment collapse.</li>
+            <li><strong>Voice Escalation Security:</strong> Real-time audio streams are peer-to-peer (WebRTC) and are never recorded or processed by Cariselle servers.</li>
+            <li><strong>Identity Verification:</strong> Access is evaluated continuously based on live device state. Presence is the only credential.</li>
+            <li><strong>Hardware Compliance:</strong> The app utilizes standard Windows APIs for Microphone and Camera access only during active, foregrounded moments.</li>
         </ul>
-    </section>
+        <p class="mono" style="margin-top:30px; font-size: 0.75rem;">Support & Identity: support@cariselle.tech</p>
+    </div>
 </div>
 
 <footer>
-    &copy; 2026 House of Ariaka | Presence Engine v1.95<br>
-    "If the system cannot prove everyone is present, it must behave as if nothing exists."
+    &copy; 2026 Cariselle Technologies | Locus Class Alpha v1.0.42<br>
+    Optimized for the Windows 11 Desktop Environment
 </footer>
 
 </body>
