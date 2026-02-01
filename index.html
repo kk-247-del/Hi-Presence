@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presence | Locus Class Alpha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --surface: #e0e5ec;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --shadow-dark: rgba(163, 177, 198, 0.6);
+            --shadow-light: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--surface);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        header { padding: 80px 0; text-align: center; }
+        .mono { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); }
+        
+        h1 { font-size: 4.5rem; margin: 10px 0; font-weight: 800; letter-spacing: -3px; }
+        h2 { font-size: 1.8rem; font-weight: 700; margin-top: 40px; }
+
+        /* Neomorphic Card UI */
+        .card {
+            background: var(--surface);
+            padding: 45px;
+            border-radius: 40px;
+            box-shadow: 20px 20px 60px #bec8d4, -20px -20px 60px #ffffff;
+            margin-bottom: 40px;
+        }
+
+        /* Neomorphic Grid Items */
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .law-item {
+            padding: 30px;
+            border-radius: 30px;
+            background: var(--surface);
+            box-shadow: 10px 10px 20px #bec8d4, -10px -10px 20px #ffffff;
+            border-top: 1px solid rgba(255,255,255,0.5);
+        }
+
+        /* Neomorphic Action Button */
+        .btn {
+            display: inline-block;
+            padding: 22px 48px;
+            background: var(--surface);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            box-shadow: 9px 9px 18px #bec8d4, -9px -9px 18px #ffffff;
+            transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Space Mono', monospace;
+            margin-top: 20px;
+        }
+
+        .btn:hover { 
+            box-shadow: inset 5px 5px 10px #bec8d4, inset -5px -5px 10px #ffffff;
+            transform: scale(0.98);
+        }
+
+        /* Privacy Policy Section for Microsoft Partner Compliance */
+        #privacy { 
+            background: rgba(255,255,255,0.2); 
+            backdrop-filter: blur(12px); 
+            border-radius: 40px; 
+            padding: 45px; 
+            border: 1px solid rgba(255,255,255,0.3);
+            margin-top: 60px;
+        }
+
+        footer { text-align: center; padding: 80px 20px; font-family: 'Space Mono', monospace; opacity: 0.5; font-size: 0.7rem; }
+        
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 15px; position: relative; padding-left: 20px; font-size: 0.95rem; }
+        li::before { content: "•"; position: absolute; left: 0; color: var(--text-muted); }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; letter-spacing: -1px; }
+            .card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="mono">Cariselle Technologies</span>
+    <h1>Presence</h1>
+    <p class="mono">Locus Class | Moment-Based Engineering</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Reject the Archive.</h2>
+        <p>Presence is a fundamentally different class of communication. It rejects the metaphor of messaging as exchange and instead treats interaction as <strong>co-presence</strong>. It is an environment where moments occur only during shared focus and dissolve the instant conditions fail. No storage. No history. Only the now.</p>
+        <a href="#store" class="btn">Windows Store Listing</a>
+    </div>
+
+    <div class="law-grid">
+        <div class="law-item">
+            <span class="mono">Active Law 01</span>
+            <h3>Presence Detection</h3>
+            <p>The system continuously evaluates foreground activity and device state. If presence becomes ambiguous, the connection ceases.</p>
+        </div>
+        <div class="law-item">
+            <span class="mono">Active Law 02</span>
+            <h3>Live Text Streaming</h3>
+            <p>Characters are streamed in real-time as they are formed. Interaction is a live event, not a package delivered after the fact.</p>
+        </div>
+        <div class="law-item">
+            <span class="mono">Active Law 03</span>
+            <h3>Moment Collapse</h3>
+            <p>Our <strong>MomentEngine™</strong> enforces a total teardown if focus is lost. There is no pause, no recovery, and no resumption.</p>
+        </div>
+    </div>
+
+    <div id="privacy">
+        <span class="mono">Architecture & Compliance</span>
+        <h2>Privacy by Constraint</h2>
+        <p>In the Locus Class, privacy is not a setting; it is a structural impossibility of data persistence.</p>
+        <ul>
+            <li><strong>Zero Local Disk Writes:</strong> Interaction data lives only in volatile memory (RAM) and is purged instantly upon moment collapse.</li>
+            <li><strong>Voice Escalation Security:</strong> Real-time audio streams are peer-to-peer (WebRTC) and are never recorded or processed by Cariselle servers.</li>
+            <li><strong>Identity Verification:</strong> Access is evaluated continuously based on live device state. Presence is the only credential.</li>
+            <li><strong>Hardware Compliance:</strong> The app utilizes standard Windows APIs for Microphone and Camera access only during active, foregrounded moments.</li>
+        </ul>
+        <p class="mono" style="margin-top:30px; font-size: 0.75rem;">Support & Identity: support@cariselle.tech</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Cariselle Technologies | Locus Class Alpha v1.0.42<br>
+    Optimized for the Windows 11 Desktop Environment
+</footer>
+
+</body>
+</html>
