@@ -11,14 +11,13 @@
             --surface: #e0e5ec;
             --text-main: #2d3436;
             --text-muted: #636e72;
-            --accent: #00d2ff;
             --shadow-dark: rgba(163, 177, 198, 0.6);
             --shadow-light: rgba(255, 255, 255, 0.8);
         }
 
         body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--surface); color: var(--text-main); line-height: 1.6; }
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        header { padding: 80px 0; text-align: center; }
+        header { padding: 60px 0; text-align: center; }
         .mono { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); }
         h1 { font-size: 4rem; margin: 10px 0; font-weight: 800; letter-spacing: -3px; }
 
@@ -30,7 +29,7 @@
             margin-bottom: 40px;
         }
 
-        .platform-grid {
+        .status-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
@@ -38,22 +37,20 @@
             text-align: center;
         }
 
-        .platform-tag {
+        .status-tag {
             padding: 15px;
-            background: var(--surface);
             border-radius: 20px;
             box-shadow: 6px 6px 12px #bec8d4, -6px -6px 12px #ffffff;
             font-weight: 700;
-            font-size: 0.9rem;
         }
 
-        .feature-box {
-            background: var(--surface);
+        .active { color: #00b894; } /* Green for deployed */
+        .upcoming { color: #0984e3; } /* Blue for upcoming */
+
+        .feature-detail {
             border-left: 4px solid var(--text-main);
-            padding: 30px;
-            border-radius: 0 30px 30px 0;
-            box-shadow: 10px 10px 20px #bec8d4;
-            margin: 40px 0;
+            padding-left: 25px;
+            margin: 30px 0;
         }
 
         .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
@@ -67,9 +64,8 @@
             box-shadow: 8px 8px 16px #bec8d4, -8px -8px 16px #ffffff;
             transition: 0.2s;
             font-family: 'Space Mono', monospace;
-            font-size: 0.85rem;
         }
-        .btn:hover { box-shadow: inset 4px 4px 8px #bec8d4, inset -4px -4px 8px #ffffff; }
+        .btn:hover { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
 
         #privacy { 
             background: rgba(255,255,255,0.2); 
@@ -77,7 +73,6 @@
             border-radius: 40px; 
             padding: 45px; 
             border: 1px solid rgba(255,255,255,0.3);
-            margin-top: 60px;
         }
 
         footer { text-align: center; padding: 60px; font-family: 'Space Mono', monospace; opacity: 0.5; font-size: 0.7rem; }
@@ -88,48 +83,50 @@
 <header>
     <span class="mono">House of Ariaka</span>
     <h1>Hi Presence</h1>
-    <div class="platform-grid container">
-        <div class="platform-tag">Windows</div>
-        <div class="platform-tag" style="color: #00d2ff;">Android (Deployed)</div>
-        <div class="platform-tag" style="color: #00d2ff;">iOS (Deployed)</div>
-        <div class="platform-tag">Web (Seamless)</div>
+    <div class="status-grid container">
+        <div class="status-tag active">Android Deployed</div>
+        <div class="status-tag active">iOS Deployed</div>
+        <div class="status-tag upcoming">Windows Phase 2</div>
     </div>
 </header>
 
 <div class="container">
     <div class="card">
-        <h2>Zero Barrier Communication</h2>
-        <p>Hi Presence is now live on <strong>Android</strong> and <strong>iOS</strong>, with the Windows engine arriving soon. We believe in frictionless co-presence. You can now engage with colleagues instantly—even if they haven't installed the app yet.</p>
+        <h2>Communication Without Archiving</h2>
+        <p>Hi Presence is an environment for <strong>Co-presence</strong>, rejecting the traditional messaging metaphor of data exchange. We provide the tools for immediate, high-fidelity interaction across platforms without ever creating a message object.</p>
         
-        <div class="feature-box">
-            <span class="mono">The Presence Address</span>
-            <h3>No Install Required.</h3>
-            <p>Generate a one-time <strong>Presence Address</strong> within your app and share it. Your colleagues can join the Moment seamlessly through their web browser. No accounts, no downloads, no friction.</p>
-            <p><small><em>*Web sessions are limited to 3 moments per user to ensure structural integrity. Full access requires the native app.</em></small></p>
+        <div class="feature-detail">
+            <span class="mono">The Web Bridge</span>
+            <h3>No-Install Seamless Access</h3>
+            <p>Collaborate with anyone instantly. Generate a one-time <strong>Presence Address</strong> and share the link. Your colleagues can join the Moment through a browser without installing the app. <em>Note: Web access is limited to 3 sessions per user to maintain architectural integrity.</em></p>
+        </div>
+
+        <div class="feature-detail">
+            <span class="mono">Upcoming Feature</span>
+            <h3>Media Reveal: Sharing Without Sending</h3>
+            <p>We are breaking the file-sharing assumption. Documents, photos, and videos are never transmitted or shared as files. Instead, they are <strong>Revealed</strong>. The originator renders the media locally and streams only the representation to the participant. [cite_start]The asset never leaves your device, and no copy is ever created[cite: 30, 121, 122].</p>
         </div>
 
         <div class="btn-group">
-            <a href="#" class="btn">App Store</a>
-            <a href="#" class="btn">Play Store</a>
-            <a href="#" class="btn">Web App (Lite)</a>
+            <a href="#" class="btn">Get for Android</a>
+            <a href="#" class="btn">Get for iOS</a>
+            <a href="#" class="btn">Join via Web</a>
         </div>
     </div>
 
     <div id="privacy">
-        <span class="mono">E2EE Engineering</span>
-        <h2>Security & The Web Bridge</h2>
-        <p>Whether on a Native App or a Web Session, the Locus Class constraints remain absolute.</p>
+        <span class="mono">House of Ariaka Security</span>
+        <h2>End-to-End Encryption (E2EE)</h2>
         <ul>
-            <li><strong>Key-by-Key E2EE:</strong> Every character of Live Text is encrypted before it leaves the browser or the app.</li>
-            <li><strong>Always-Warm Voice:</strong> P2P voice streaming is encrypted end-to-end, bypassing House of Ariaka servers entirely.</li>
-            <li><strong>Session Purge:</strong> Web sessions utilize volatile browser memory; once the tab closes or the moment collapses, the E2EE keys are wiped from existence.</li>
+            [cite_start]<li><strong>Key-by-Key E2EE:</strong> Live Text is encrypted and streamed at the character level—interaction is the event, not a precursor[cite: 13, 14].</li>
+            [cite_start]<li><strong>Warm Audio:</strong> Voice escalation uses a secure, always-ready P2P pipeline[cite: 19, 20].</li>
+            [cite_start]<li><strong>Zero Knowledge:</strong> Our servers never see your text, voice, media, or encryption keys[cite: 82].</li>
         </ul>
-        <p class="mono" style="margin-top:20px;">Support: support@ariaka.house</p>
     </div>
 </div>
 
 <footer>
-    &copy; 2026 House of Ariaka | Presence Address Technology v1.2
+    &copy; 2026 House of Ariaka | Presence Engine v1.5
 </footer>
 
 </body>
