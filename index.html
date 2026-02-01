@@ -14,6 +14,7 @@
             --shadow-light: rgba(255, 255, 255, 0.8);
             --accent: #0984e3;
             --dev: #6c5ce7;
+            --live-green: #00b894;
         }
 
         body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--surface); color: var(--text-main); line-height: 1.6; }
@@ -22,7 +23,8 @@
         .mono { font-family: 'Space Mono', monospace; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: var(--text-muted); }
         h1 { font-size: 4.5rem; margin: 10px 0; font-weight: 800; letter-spacing: -4px; line-height: 1; }
         h2 { font-size: 2.2rem; margin-top: 50px; border-bottom: 2px solid rgba(0,0,0,0.05); padding-bottom: 10px; }
-        
+        h3 { font-family: 'Space Mono', monospace; font-size: 1.1rem; color: var(--text-main); margin-top: 30px; }
+
         .blueprint-card {
             background: var(--surface);
             padding: 60px;
@@ -43,23 +45,28 @@
             letter-spacing: 1px;
         }
 
-        .law-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
+        .status-grid { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+        .status-tag { font-family: 'Space Mono', monospace; font-weight: 700; padding: 8px 20px; border-radius: 12px; font-size: 0.75rem; background: var(--surface); box-shadow: 4px 4px 10px #bec8d4, -4px -4px 10px #ffffff; }
+        .live { color: var(--live-green); border: 1px solid var(--live-green); }
+        .wait { color: #d63031; border: 1px solid #d63031; }
 
-        .law-item {
-            padding: 40px;
-            border-radius: 35px;
+        .law-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+        .law-item { padding: 40px; border-radius: 35px; background: var(--surface); box-shadow: 12px 12px 24px #bec8d4, -12px -12px 24px #ffffff; }
+
+        .btn-group { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+        .btn {
+            padding: 18px 35px;
             background: var(--surface);
-            box-shadow: 12px 12px 24px #bec8d4, -12px -12px 24px #ffffff;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 700;
+            box-shadow: 8px 8px 16px #bec8d4, -8px -8px 16px #ffffff;
+            transition: 0.2s;
+            font-family: 'Space Mono', monospace;
         }
-
-        .status-tag { font-family: 'Space Mono', monospace; font-weight: 700; padding: 5px 15px; border-radius: 10px; font-size: 0.75rem; background: #dfe6e9; }
-        .live { background: #55efc4; color: #00b894; }
-        .wait { background: #ff7675; color: white; }
+        .btn:hover:not(.disabled) { box-shadow: inset 4px 4px 8px #bec8d4, inset -5px -5px 10px #ffffff; }
+        .disabled { opacity: 0.4; cursor: not-allowed; text-decoration: line-through; }
 
         #privacy-policy {
             background: rgba(255,255,255,0.3);
@@ -76,70 +83,81 @@
 <body>
 
 <header>
-    <span class="mono">House of Ariaka Architectural Manifest</span>
+    <span class="mono">The House of Ariaka Structural Manifest</span>
     <h1>Hi Presence</h1>
-    <div style="margin-top: 30px;">
-        <span class="status-tag live">Android Deployed</span>
-        <span class="status-tag wait">iOS: Waiting List</span>
-        <span class="status-tag">Windows: Phase 2</span>
+    <div class="status-grid container">
+        <div class="status-tag live">Android: Live</div>
+        <div class="status-tag live">Web Bridge: Live</div>
+        <div class="status-tag wait">iOS: In Dev</div>
+        <div class="status-tag">Windows: Phase 2</div>
     </div>
 </header>
 
 <div class="container">
     <section class="blueprint-card">
-        <h2>I. Core Architecture (Live)</h2>
+        <h2>I. Architecture & Presence (Live)</h2>
+        <p>Hi Presence is an environment for <strong>Co-presence</strong>. It rejects the messaging metaphor of exchange and instead treats interaction as a shared state. Nothing is sent, nothing is received, and nothing is stored.</p>
+        
         <div class="law-grid">
             <div class="law-item">
-                <span class="mono">Engine</span>
-                <h3>Moment Persistence</h3>
-                <p>Hi Presence creates ephemeral environments that dissolve the instant focus is lost. No message objects are ever created; interaction is a live, shared state.</p>
+                <span class="mono">Core Protocol</span>
+                <h3>Key-by-Key E2EE</h3>
+                <p>Live Text is encrypted and streamed at the character level. Typing <em>is</em> the interaction. No message objects are created.</p>
             </div>
             <div class="law-item">
-                <span class="mono">Protocol</span>
-                <h3>E2EE Live Text</h3>
-                <p>Characters are encrypted and streamed in real-time. Typing is the act of communication. There is no "Send" primitive.</p>
+                <span class="mono">Voice Logic</span>
+                <h3>Always-Warm Audio</h3>
+                <p>Voice escalation utilizes a secure, always-ready P2P pipeline. No "calling" rituals—just seamless presence widening.</p>
             </div>
             <div class="law-item">
                 <span class="mono">Web Bridge</span>
-                <h3>One-Time Address</h3>
-                <p>Generate a Presence Address to invite colleagues via the web. Frictionless join with a 3-Moment structural limit.</p>
+                <h3>Presence Address</h3>
+                <p>Invite anyone instantly. Colleagues join via browser with no install required. Web sessions are limited to 3 Moments per user.</p>
             </div>
+        </div>
+
+        <div class="btn-group">
+            <a href="#" class="btn">Download Android</a>
+            <a href="#" class="btn disabled">iOS Waiting List</a>
+            <a href="#" class="btn">Open Web App</a>
         </div>
     </section>
 
     <section class="blueprint-card" style="border: 2px dashed var(--dev);">
-        <div class="dev-badge">LABS: UNDER DEVELOPMENT</div>
+        <div class="dev-badge">LABS: ACTIVE DEVELOPMENT</div>
         <h2>II. Upcoming Blueprint Phases</h2>
         
         <div class="law-grid">
             <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
                 <span class="mono">Status: Engineering</span>
                 <h3>The Reveal System</h3>
-                <p>Reimagining media as <strong>co-presence without transfer</strong>. Photos and documents will be "Revealed"—rendered locally and streamed as a representation. The raw file never leaves the source device.</p>
+                <p>Sharing without sending. Media is rendered locally and "projected" to participants via E2EE stream. The raw file never leaves the source device.</p>
             </div>
             <div class="law-item" style="box-shadow: none; border: 1px solid rgba(108, 92, 231, 0.2);">
-                <span class="mono">Status: Prototype</span>
+                <span class="mono">Status: Prototyping</span>
                 <h3>Drift Windows</h3>
-                <p>A non-obligatory coordination system for availability. Drift windows allow for potential co-presence without the rigidity of scheduling, expiring silently if not met.</p>
+                <p>A non-obligatory coordination system for availability. Drift windows allow for potential co-presence without the rigidity of scheduling.</p>
             </div>
         </div>
     </section>
 
     <section id="privacy-policy">
-        <span class="mono">Compliance</span>
+        <span class="mono">Security & Compliance</span>
         <h2>Privacy by Constraint</h2>
-        <p>Our Privacy Policy is simple: We do not store what we cannot see. Since Hi Presence rejects the "Message Object," there is no archive to breach.</p>
+        <p>At House of Ariaka, privacy is not a feature; it is the structural ground of our system. <strong>Privacy is a structural impossibility of data persistence.</strong></p>
+        
         <ul>
-            <li><strong>Zero Knowledge:</strong> All text and voice are E2EE. Our backend acts as a blind switchboard.</li>
-            <li><strong>Memory Only:</strong> Data exists only in volatile RAM and is wiped upon Moment collapse.</li>
-            <li><strong>No Tracking:</strong> We do not collect metadata or interaction history.</li>
+            <li><strong>Zero Knowledge:</strong> All content is End-to-End Encrypted (AES-256). House of Ariaka servers never see your data.</li>
+            <li><strong>Volatile Memory:</strong> Interaction data exists only in RAM and is purged instantly upon Moment collapse.</li>
+            <li><strong>The Law of Collapse:</strong> Any violation of focus (screen lock/backgrounding) destroys the session and the ephemeral keys.</li>
+            <li><strong>Hardware Integrity:</strong> Microphone and Camera are only accessible during active, foregrounded Moments.</li>
         </ul>
     </section>
 </div>
 
 <footer>
-    &copy; 2026 House of Ariaka | Presence Engine v1.9<br>
-    "Privacy is a structural impossibility of data persistence."
+    &copy; 2026 House of Ariaka | Presence Engine v1.95<br>
+    "If the system cannot prove everyone is present, it must behave as if nothing exists."
 </footer>
 
 </body>
